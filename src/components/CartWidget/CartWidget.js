@@ -10,7 +10,7 @@ const CartWidget = () => {
     return (
         <div className="nav-cartWidget">
             
-            4 
+            
             <img id="carrito" src={image} alt="carrito de compras" style={{width: '50px', margin: '10px'}}/>
             
             
