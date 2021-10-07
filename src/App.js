@@ -4,6 +4,8 @@ import NavBar from './components/NavBar/NavBar';
 
 import Landing from './components/Landing/Landing';
 
+import 'semantic-ui-css/semantic.min.css'
+
 
 
 

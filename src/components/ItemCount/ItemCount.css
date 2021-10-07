@@ -1,12 +1,11 @@
 .counter{
-    display: block;
-    background-color: grey;
-    width: fit-content;
+    /* display: block; */
+    /* width: fit-content; */
     align-items: center;
     text-align: center;
-    border: solid black;
     padding: 10px;
-
+    background-color: #FCCF00;
+    color: #D01012;
 
 }
 

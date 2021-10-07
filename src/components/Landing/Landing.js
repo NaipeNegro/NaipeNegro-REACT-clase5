@@ -1,14 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './Landing.css';
+import ItemList from '../ItemList/ItemList';
 
-import ItemCount from '../ItemCount/ItemCount';
-
-import './Landing.css'
 
 const Landing = () => {
     return (
         <div id="cuerpo">
-            <h1>Landing</h1>
-            <ItemCount/>
+            <ItemList/>
+
             
             
         </div>
