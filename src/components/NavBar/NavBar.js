@@ -1,8 +1,11 @@
 import React from 'react'
 
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 import './NavBar.css';
+
+// import { Link } from 'react-router-native';
 
 const NavBar = () => {
     return (
@@ -11,15 +14,10 @@ const NavBar = () => {
                 LEGO
             </h1>
             <ul className="nav-list">
-                <li>
-                    <a href="/" className="nav-item">Comprar</a>
-                </li>
-                <li>
-                    <a href="/" className="nav-item">Registrarse</a>
-                </li>
-                <li>
-                    <a href="/" className="nav-item">Contacto</a>
-                </li>
+                <Link className='Link' to='/'>Home</Link>
+                <Link className='Link' to='/about'>Nosotros</Link>
+                <Link className='Link' to='/contact'>Contacto</Link>
+
             </ul>
             <CartWidget/>
 

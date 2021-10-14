@@ -1,22 +1,11 @@
 import React, {useState, useEffect} from "react";
 
 import Item from "../Item/Item";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ItemList = () => {
     const [items, setItems] = useState([]);
-
-    //manera sencilla
-
-    // useEffect(() =>{
-    //     setTimeout(()=>{
-    //         console.log('Geeting data')
-    //     },2000);
-
-
-    // },[])
-
-    //manera complicada:
-
 
     useEffect(() =>{
         fetch('https://api.github.com/users')
@@ -27,12 +16,14 @@ const ItemList = () => {
 
 
     return (
-        <div id="items">
+        <div className="itemsContainer">
             <h1>Items</h1>
             {items.map((item) =>{
                 return (
                     <div>
+                        <Link to={`/detail/${item.id}`}>
                         <Item data={item}/>
+                    </Link>
                     </div>
                 )
             })
