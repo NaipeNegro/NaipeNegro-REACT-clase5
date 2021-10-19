@@ -23,8 +23,9 @@ const ItemList = () => {
 
 
     return (
-        <div className="itemsContainer">
+        <div className="itemsContainer" style={{alignItems:'center'}}>
             <h1>Items</h1>
+            <div  id="figuresList" style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding:'2%'}}>
             {items.map((item) =>{
                 return (
                     <div>
@@ -35,6 +36,7 @@ const ItemList = () => {
                 )
             })
             }
+            </div>
 
 
         </div>

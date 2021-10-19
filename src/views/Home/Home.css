@@ -1,5 +1,8 @@
-/* .cuerpo{
-    display: flex;
+.cuerpo{
+    display: grid;
+    grid-template-columns: 4;
+    align-items: center;
 
 
-} */
+
+}

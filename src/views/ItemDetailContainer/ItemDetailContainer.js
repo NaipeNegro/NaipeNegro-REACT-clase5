@@ -34,7 +34,7 @@ const Detail = ({ match }) => {
     console.log(item)
 
     return (
-        <div>
+        <div style={{alignItems: 'center', display:'block'}}>
             <h1>Detalle</h1>
 
                         <Item data={item}/>
