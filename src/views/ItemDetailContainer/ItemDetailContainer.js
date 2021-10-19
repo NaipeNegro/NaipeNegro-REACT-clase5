@@ -14,11 +14,24 @@ const Detail = ({ match }) => {
 
     const [item, setItem] = useState([]);
 
+    // useEffect(() => {
+    //     obtenerDatos()
+    // },[])
+
+    // const obtenerDatos = async () => {
+    //     const data = await fetch(`https://rebrickable.com/api/v3/lego/minifigs/${itemID}/?key=455ee015179d58920c40b17da84e4a81`)
+    //     const items = await data.json()
+    //     const figures = items.results
+    //     setItem(figures)
+    // }
+
     useEffect(() =>{
-        axios(`https://api.github.com/users/${itemID}`)
+        axios(`https://rebrickable.com/api/v3/lego/minifigs/${itemID}/?key=455ee015179d58920c40b17da84e4a81`)
             .then(res => setItem(res.data))
 
     },[itemID]);
+
+    console.log(item)
 
     return (
         <div>
