@@ -1,5 +1,6 @@
 import React from "react";
 import "./ItemCount.css";
+import { Link } from "react-router-dom";
 
 const ItemCount = () => {
     const [counter, setCounter] = React.useState(0);
@@ -25,17 +26,33 @@ const ItemCount = () => {
             setCounter(counter -1);
         }
         else{
-            alert("No puede quitar más elementos")
+            alert("No puede quitar más elementos.")
         }
+    }
 
+    const handlerCompra = () => {
+
+        if(counter===0){
+            
+            alert("Tenés que agregar la cantidad deseada primero.")
+        }
+        else{
+            alert(`Se enviaron ${counter} elementos al carrito.`)
+        }
     }
 
     return (
 
         <div className="counter">
             <p id="contador">{counter}</p>
-            <button onClick={handlerIncrement}>Agregar</button>
-            <button onClick={handlerDecrement}>Quitar</button>
+            <div>
+                <button onClick={handlerIncrement}>Agregar</button>
+                <button onClick={handlerDecrement}>Quitar</button>
+            </div>
+            <Link to={`/cart`}>
+
+            <button onClick={handlerCompra}>Comprar</button>
+            </Link>
 
         </div>
 

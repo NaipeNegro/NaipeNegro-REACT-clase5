@@ -1,7 +1,8 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
+import ItemCount from '../ItemCount/ItemCount';
 
-const Item = ({data}) => (
+const ItemDetail = ({data}) => (
   <Card class="tarjeta">
     <Image src={data.set_img_url} wrapped ui={false} />
     <Card.Content>
@@ -13,7 +14,11 @@ const Item = ({data}) => (
         {data.set_url}
       </Card.Description>
     </Card.Content>
+    <ItemCount/>
+
   </Card>
+
+
 )
 
-export default Item;
+export default ItemDetail;

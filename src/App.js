@@ -11,6 +11,7 @@ import Detail from './views/ItemDetailContainer/ItemDetailContainer';
 
 
 import 'semantic-ui-css/semantic.min.css'
+import Cart from './views/Cart/Cart';
 
 // import { Router, Link } from 'react-router';
 
@@ -31,6 +32,9 @@ function App() {
           <Route path='/about'  component={About} />
           <Route path='/contact'  component={Contact} />
           <Route path='/detail/:id'  component={Detail} />
+          <Route path='/cart'  component={Cart} />
+          
+
         </Switch>
 
       </div>
