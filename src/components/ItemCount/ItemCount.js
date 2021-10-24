@@ -38,6 +38,7 @@ const ItemCount = () => {
         }
         else{
             alert(`Se enviaron ${counter} elementos al carrito.`)
+
         }
     }
 

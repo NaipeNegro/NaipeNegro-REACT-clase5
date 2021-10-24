@@ -12,7 +12,7 @@ const Detail = ({ match }) => {
     const [item, setItem] = useState([]);
 
     useEffect(() =>{
-        axios(`https://rebrickable.com/api/v3/lego/minifigs/${itemID}/?key=455ee015179d58920c40b17da84e4a81`)
+        axios(`${process.env.REACT_APP_url}/${itemID}${process.env.REACT_APP_key}`)
             .then(res => setItem(res.data))
 
     },[itemID]);

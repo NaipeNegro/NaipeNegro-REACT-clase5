@@ -16,7 +16,7 @@ import Cart from './views/Cart/Cart';
 // import { Router, Link } from 'react-router';
 
 
-
+import { ItemsProvider } from './ItemContext';
 
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,21 +24,23 @@ import Cart from './views/Cart/Cart';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavBar/>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/about'  component={About} />
-          <Route path='/contact'  component={Contact} />
-          <Route path='/detail/:id'  component={Detail} />
-          <Route path='/cart'  component={Cart} />
-          
+    <ItemsProvider>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/contact' component={Contact} />
+            <Route path='/detail/:id' component={Detail} />
+            <Route path='/cart' component={Cart} />
 
-        </Switch>
 
-      </div>
-     </Router>
+          </Switch>
+
+        </div>
+      </Router>
+    </ItemsProvider>
   );
 }
 

@@ -11,7 +11,7 @@ const ItemList = () => {
     },[])
 
     const obtenerDatos = async () => {
-        const data = await fetch('https://rebrickable.com/api/v3/lego/minifigs/?key=455ee015179d58920c40b17da84e4a81')
+        const data = await fetch(`${process.env.REACT_APP_url}${process.env.REACT_APP_key}`)
         const items = await data.json()
         const figures = items.results
         setItems(figures)

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
+import PropTypes from 'prop-types';
 
 const Item = ({data}) => (
   <Card class="tarjeta">
@@ -15,5 +16,12 @@ const Item = ({data}) => (
     </Card.Content>
   </Card>
 )
+
+Item.propTypes = {
+  set_img_url: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  set_num: PropTypes.number,
+  set_url: PropTypes.string
+};
 
 export default Item;
