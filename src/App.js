@@ -24,7 +24,7 @@ import { ItemsProvider } from './ItemContext';
 
 function App() {
   return (
-    <ItemsProvider>
+		<ItemsProvider>
       <Router>
         <div className="App">
           <NavBar />
@@ -40,7 +40,7 @@ function App() {
 
         </div>
       </Router>
-    </ItemsProvider>
+      </ItemsProvider>
   );
 }
 

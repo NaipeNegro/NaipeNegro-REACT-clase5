@@ -1,5 +1,6 @@
-import React from 'react'
-
+  
+import React, { useContext } from 'react';
+import { ItemsContext } from '../../ItemContext';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/image/logoChico2.png';
@@ -9,6 +10,7 @@ import './NavBar.css';
 // import { Link } from 'react-router-native';
 
 const NavBar = () => {
+    const [items, setItems] = useContext(ItemsContext);
     return (
         <div className="nav-conteiner" style={{alignItems:'center'}}>
             <Link className='Link' to='/'>
@@ -23,7 +25,11 @@ const NavBar = () => {
                 <Link className='Link' to='/contact'>Contacto</Link>
             </ul>
             <Link className='Link' to='/cart'>
+
                 <CartWidget/>
+                <nav className='Navbar'>
+			        <h1>Items : {items.length}</h1>
+		        </nav>
             </Link>
         </div>
     )
