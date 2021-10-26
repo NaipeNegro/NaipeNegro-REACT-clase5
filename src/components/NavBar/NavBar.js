@@ -21,11 +21,10 @@ const NavBar = () => {
                 <Link className='Link' to='/'>Home</Link>
                 <Link className='Link' to='/about'>Nosotros</Link>
                 <Link className='Link' to='/contact'>Contacto</Link>
-
             </ul>
-            <CartWidget/>
-
-            
+            <Link className='Link' to='/cart'>
+                <CartWidget/>
+            </Link>
         </div>
     )
 }
