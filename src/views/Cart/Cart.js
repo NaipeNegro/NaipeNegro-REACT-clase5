@@ -12,8 +12,6 @@ const Cart = () => {
 			{items.map((item) => {
 				return <ItemCart data={item} key={item.id} />;
 			})}
-
-
         </div>
     )
 }
