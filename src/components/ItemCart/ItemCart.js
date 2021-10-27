@@ -1,22 +1,24 @@
-
-
-import React from 'react';
-import { Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import React from "react";
+import "./ItemCart.css";
 
 const ItemCart = ({ data }) => {
-	return (
-		<div style={{ maxWidth: 400, margin: 20 }}>
-			<Card>
-				<CardBody>
-					<CardTitle tag='h5'>Producto</CardTitle>
-					<CardSubtitle tag='h6' className='mb-2 text-muted'>
-						{data.name}
-					</CardSubtitle>
-					<CardText>${data.price}</CardText>
-				</CardBody>
-			</Card>
-		</div>
-	);
+  // </div>
+  const handlerIncrement = () => {
+    console.log("sacaste");
+  };
+
+  const handlerDecrement = () => {
+    console.log("sacaste");
+  };
+  return (
+    <div className="registroTabla">
+      <p>{data.name}</p>
+      <p>$ {data.price}</p>
+      <p>{data.quantity}</p>
+      <button onClick={handlerIncrement}>Agregar</button>
+      <button onClick={handlerDecrement}>Quitar</button>
+    </div>
+  );
 };
 
 export default ItemCart;
