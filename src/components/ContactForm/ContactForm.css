@@ -4,6 +4,11 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 50rem;
+    background-color: #FCCF00;
+
+    justify-content: space-between;
+
+    color: #D01012;
+
 
 }

@@ -1,17 +1,14 @@
-import React from 'react';
-import './Home.css';
-import ItemList from '../../components/ItemList/ItemList';
-
+import React from "react";
+import ItemList from "../../components/ItemList/ItemList";
+import "./Home.css";
 
 const Home = () => {
-    return (
-        <div className="cuerpo">
-            <ItemList/>
+  return (
+    <div className="cuerpo">
+      <h1>Items</h1>
+      <ItemList />
+    </div>
+  );
+};
 
-            
-            
-        </div>
-    )
-}
-
-export default Home
+export default Home;

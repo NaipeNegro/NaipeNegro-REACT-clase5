@@ -1,32 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import ItemDetail from '../../components/ItemDetail/ItemDetail';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import axios from "axios";
+import "./ItemDetailContainter.css";
 //css?
 
-
-
 const Detail = ({ match }) => {
+  let itemID = match.params.id;
+  const [item, setItem] = useState([]);
 
+  useEffect(() => {
+    axios(
+      `${process.env.REACT_APP_url}/${itemID}${process.env.REACT_APP_key}`
+    ).then((res) => setItem(res.data));
+  }, [itemID]);
 
-    let itemID = match.params.id
-    const [item, setItem] = useState([]);
+  console.log(item);
 
-    useEffect(() =>{
-        axios(`${process.env.REACT_APP_url}/${itemID}${process.env.REACT_APP_key}`)
-            .then(res => setItem(res.data))
+  return (
+    <div className="itemDetailContainer">
+      <h1>Detalle</h1>
 
-    },[itemID]);
+      <ItemDetail data={item} />
+    </div>
+  );
+};
 
-    console.log(item)
-
-    return (
-        <div style={{alignItems: 'center', display:'block'}}>
-            <h1>Detalle</h1>
-
-                        <ItemDetail data={item}/>
-       
-        </div>
-    );
-}
-
-export default Detail
+export default Detail;

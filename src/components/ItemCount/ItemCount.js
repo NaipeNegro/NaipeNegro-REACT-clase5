@@ -38,8 +38,8 @@ const ItemCount = () => {
                 alert(`Se enviaron ${counter} elementos al carrito.`)
                 setStock(stock-counter)
                 setItems([
-                    {id: 45454, name: 'Sony', price: 20},
-                    {id: 45555, name: 'Asus', price: 20400}
+                    {id: 45454, name: 'Sony', price: 20, quantity: 10},
+                    {id: 45555, name: 'Asus', price: 20400, quantity: 10}
                 ]
 
                 )

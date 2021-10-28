@@ -1,5 +1,13 @@
 .itemsContainer{
     align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 4;
+
+    
+    
+    
+    
 
 }
 

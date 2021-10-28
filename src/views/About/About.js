@@ -1,18 +1,13 @@
-import React from 'react';
-import './About.css';
-
-
+import React from "react";
+import "./About.css";
 
 const About = () => {
-    return (
-        <div>
-            <h1>Sobre nosotros</h1>
-            <p>Lorem kjgowijgowgowgowgonon</p>
+  return (
+    <div>
+      <h1>Sobre nosotros</h1>
+      <p>Lorem kjgowijgowgowgowgonon</p>
+    </div>
+  );
+};
 
-            
-            
-        </div>
-    )
-}
-
-export default About
+export default About;
