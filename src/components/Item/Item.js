@@ -26,11 +26,10 @@ const Item = ({ data }) => (
   </Card>
 );
 
-// Item.propTypes = {
-//   set_img_url: PropTypes.string,
-//   name: PropTypes.string.isRequired,
-//   set_num: PropTypes.number,
-//   set_url: PropTypes.string,
-// };
+Item.propTypes = {
+  img: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  pieces: PropTypes.number,
+};
 
 export default Item;

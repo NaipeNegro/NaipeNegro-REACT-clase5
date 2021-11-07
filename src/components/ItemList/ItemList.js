@@ -19,9 +19,9 @@ const ItemList = () => {
       const items = await getDocs(collection(db, "products"));
       items.forEach((document) => {
         docs.push({...document.data(), id: document.id});
-        setProducts(docs);
-
+        
       });
+      setProducts(docs);
     };
     requestData();
 
