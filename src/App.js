@@ -18,7 +18,30 @@ import { ItemsProvider } from "./ItemContext";
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { db } from './firebase/firebase_config';
+import { collection, getDocs} from 'firebase/firestore';
+import React, {useState, useEffect } from "react";
+
 function App() {
+  const [products, setProducts] = useState([]);
+
+
+
+  useEffect(() => {
+    const requestData = async() =>  {
+      const docs = [];
+      const items = await getDocs(collection(db, "products"));
+      items.forEach((document) => {
+        // console.log(document.data(), document.id);
+        docs.push({...document.data(), id: document.id});
+        setProducts(docs);
+
+      });
+    };
+    requestData();
+
+  }, []);
+  
   return (
     <ItemsProvider>
       <Router>
