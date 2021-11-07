@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from "react";
 
+
 import Item from "../Item/Item";
 import { Link } from "react-router-dom";
 import "./ItemList.css";
 
+import { db } from '../../firebase/firebase_config';
+import { collection, getDocs} from 'firebase/firestore';
+
+
 const ItemList = () => {
-  const [items, setItems] = useState([]);
+
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    obtenerDatos();
-  }, []);
+    const requestData = async() =>  {
+      const docs = [];
+      const items = await getDocs(collection(db, "products"));
+      items.forEach((document) => {
+        docs.push({...document.data(), id: document.id});
+        setProducts(docs);
 
-  const obtenerDatos = async () => {
-    const data = await fetch(
-      `${process.env.REACT_APP_url}${process.env.REACT_APP_key}`
-    );
-    const items = await data.json();
-    const figures = items.results;
-    setItems(figures);
-  };
+      });
+    };
+    requestData();
+
+  }, []);
 
   return (
     <div className="itemsContainer" style={{ alignItems: "center" }}>
@@ -30,10 +37,10 @@ const ItemList = () => {
           padding: "2%",
         }}
       >
-        {items.map((item) => {
+        {products.map((item) => {
           return (
             <div>
-              <Link to={`/detail/${item.set_num}`}>
+              <Link to={`/detail/${item.id}`}>
                 <Item data={item} />
               </Link>
             </div>
