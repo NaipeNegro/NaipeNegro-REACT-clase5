@@ -36,11 +36,18 @@ const Detail = ({ match }) => {
 
   }, [itemID]);
 
+  const productDetail = products.filter(function(element){
+    return element.id === itemID;
+  });
+
+  console.log(productDetail);
+  console.log(products)
+
   return (
     <div className="itemDetailContainer">
       <h1>Detalle</h1>
 
-      <ItemDetail data={products} />
+      <ItemDetail data={productDetail[0]} />
     </div>
   );
 };

@@ -19,8 +19,8 @@ const ItemDetail = ({ data }) => (
   //   </Card.Content>
   //   <ItemCount />
   // </Card>
-  <Card class="tarjeta">
-    <Image src={data.img} wrapped ui={false} />
+  <Card className="tarjeta">
+    <Image src={data.img} />
     <Card.Content>
       <Card.Header>{data.title}</Card.Header>
       <Card.Meta>

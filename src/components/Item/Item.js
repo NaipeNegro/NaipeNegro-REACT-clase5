@@ -14,7 +14,7 @@ const Item = ({ data }) => (
   //     <Card.Description>{data.set_url}</Card.Description>
   //   </Card.Content>
   // </Card>
-    <Card class="tarjeta">
+    <Card className="tarjeta">
     <Image src={data.img} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{data.title}</Card.Header>
@@ -28,7 +28,7 @@ const Item = ({ data }) => (
 
 Item.propTypes = {
   img: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   pieces: PropTypes.number,
 };
 

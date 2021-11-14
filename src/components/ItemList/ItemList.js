@@ -39,9 +39,9 @@ const ItemList = () => {
       >
         {products.map((item) => {
           return (
-            <div>
+            <div key={item.id}>
               <Link to={`/detail/${item.id}`}>
-                <Item data={item} />
+                <Item data={item}/> 
               </Link>
             </div>
           );

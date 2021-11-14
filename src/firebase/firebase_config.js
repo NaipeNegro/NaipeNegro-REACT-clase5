@@ -6,13 +6,16 @@ import {getFirestore}   from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCby5Cp9d8W2x4SaUEPuOum72uXraPVJeU",
+  // apiKey: "AIzaSyCby5Cp9d8W2x4SaUEPuOum72uXraPVJeU",
+  apiKey: `${process.env.REACT_apiKey}`,
   
-  authDomain: "coderhouse-react-lego.firebaseapp.com",
+  authDomain: `${process.env.REACT_authDomain}`,
   projectId: "coderhouse-react-lego",
-  storageBucket: "coderhouse-react-lego.appspot.com",
-  messagingSenderId: "702549128661",
-  appId: "1:702549128661:web:ae9830ce6541e05ab7395c"
+  storageBucket: `${process.env.REACT_storageBucket}`,
+  messagingSenderId: `${process.env.REACT_messagingSenderId}`,
+  appId: `${process.env.REACT_appId}`,
+
+
 };
 
 // Initialize Firebase
