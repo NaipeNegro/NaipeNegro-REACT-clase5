@@ -11,7 +11,7 @@ import "./NavBar.css";
 const NavBar = () => {
   const [items, setItems] = useContext(ItemsContext);
   return (
-    <div className="nav-conteiner" style={{ alignItems: "center" }}>
+    <div className="nav-conteiner" style={{ alignItems: "center", padding: "0px" }}>
       <Link className="Link" to="/">
         <img src={Logo} alt="logo" />
       </Link>
@@ -29,9 +29,9 @@ const NavBar = () => {
           Contacto
         </Link>
       </ul>
-      <Link className="Link" to="/cart">
+      <Link className="Link cartAndCount" to="/cart">
         <CartWidget />
-        <h1>Items : {items.length}</h1>
+        <h2 className='countCart'>Items : {items.length}</h2>
       </Link>
     </div>
   );

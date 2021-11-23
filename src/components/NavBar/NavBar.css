@@ -30,3 +30,13 @@
 .nav-item:hover{
     color: #D01012;
 }
+
+.countCart{
+    margin: 0px;
+}
+
+.cartAndCount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
