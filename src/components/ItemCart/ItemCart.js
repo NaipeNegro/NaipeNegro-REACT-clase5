@@ -4,7 +4,7 @@ import "./ItemCart.css";
 const ItemCart = ({ data }) => {
   // </div>
   const handlerIncrement = () => {
-    console.log("sacaste");
+    console.log("agregaste");
   };
 
   const handlerDecrement = () => {

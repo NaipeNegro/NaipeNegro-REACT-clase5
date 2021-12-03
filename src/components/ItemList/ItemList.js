@@ -5,7 +5,7 @@ import Item from "../Item/Item";
 import { Link } from "react-router-dom";
 import "./ItemList.css";
 
-import { db } from '../../firebase/firebase_config';
+import  db  from '../../firebase/firebase_config';
 import { collection, getDocs} from 'firebase/firestore';
 
 

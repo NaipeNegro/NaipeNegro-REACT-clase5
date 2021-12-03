@@ -5,12 +5,22 @@ import "./ItemCount.css";
 import { Link } from "react-router-dom";
 import { ItemsContext } from "../../ItemContext";
 
-const ItemCount = () => {
+const ItemCount = ({ data }) => {
+    const cantidad = data.stock
+
     const [items, setItems] = useContext(ItemsContext)
 
     const [counter, setCounter] = React.useState(0);
-    const [stock, setStock] = React.useState(10);
+    const [stock, setStock] = React.useState(0);
+
+    console.log("stock: ", stock)
+    console.log("cantidad: ", cantidad)
+   
+
+
+
     const handlerIncrement = () => {
+        setStock(cantidad)
         if(counter<stock){  
             setCounter(counter +1);
         }
@@ -33,13 +43,13 @@ const ItemCount = () => {
             alert("Tenés que agregar la cantidad deseada primero.")
         }
         else{
-            alert(`Quedan ${stock} elementos en stock.`)
+            // setStock(stock-counter)
+            // alert(`Quedan ${stock} elementos en stock.`)
             if(stock>=counter){
                 alert(`Se enviaron ${counter} elementos al carrito.`)
                 setStock(stock-counter)
                 setItems([
-                    {id: 45454, name: 'Sony', price: 20, quantity: 10},
-                    {id: 45555, name: 'Asus', price: 20400, quantity: 10}
+                    {id: data.id, name: data.title, price: data.price, quantity: counter},
                 ]
 
                 )
@@ -53,7 +63,9 @@ const ItemCount = () => {
 
     return (
         <div className="counter">
-            <p id="contador">{counter}</p>
+            <p id="stock">Stock: {data.stock}</p>
+            <p id="contador">Comprar: {counter}</p>
+
             <div>
                 <button onClick={handlerIncrement}>Agregar</button>
                 <button onClick={handlerDecrement}>Quitar</button>

@@ -27,8 +27,9 @@ const ItemDetail = ({ data }) => (
         <span className="date">{data.id}</span>
       </Card.Meta>
       <Card.Description>Cantidad de piezas: {data.pieces}</Card.Description>
+      <Card.Description>Precio: {data.price}</Card.Description>
     </Card.Content>
-    <ItemCount />
+    <ItemCount data={ data } />
   </Card>
 );
 
