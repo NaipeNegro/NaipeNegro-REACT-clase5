@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import CartProvider from "../../CartContext";
+// import CartProvider from "../../CartContext";
 
 import "./ItemCount.css";
 import { Link } from "react-router-dom";
@@ -48,7 +48,7 @@ const ItemCount = ({ data }) => {
             if(stock>=counter){
                 alert(`Se enviaron ${counter} elementos al carrito.`)
                 setStock(stock-counter)
-                setItems([
+                setItems([...items,
                     {id: data.id, name: data.title, price: data.price, quantity: counter},
                 ]
 
