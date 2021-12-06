@@ -15,16 +15,31 @@ const ItemCount = ({ data }) => {
   const [counter, setCounter] = React.useState(0);
   const [stock, setStock] = React.useState(0);
 
-  // console.log("stock: ", stock)
-  // console.log("cantidad: ", cantidad)
+  // setStock(cantidad);
+
+  console.log("stock: ", stock)
+  console.log("cantidad: ", cantidad)
 
   const handlerIncrement = () => {
     setStock(cantidad);
-    if (counter < stock) {
+    if (counter < cantidad) {
       setCounter(counter + 1);
+      console.log("stock: ", stock)
+      console.log("cantidad: ", cantidad)
+
+
+
     } else {
       alert("No hay más stock");
+      console.log("stock: ", stock)
+      console.log("cantidad: ", cantidad)
+
     }
+    // do {
+    //   setStock(cantidad);
+    //   setCounter(counter + 1);
+      
+    // } while (counter > stock);
   };
 
   const handlerDecrement = () => {

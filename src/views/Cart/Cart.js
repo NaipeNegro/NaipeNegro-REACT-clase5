@@ -17,11 +17,7 @@ const Cart = () => {
         <Link className="Link" to="/">
           Seguir Comprando
         </Link>
-        <a
-          rel="noopener noreferrer"
-          href="https://mpago.la/12yxv4v"
-          target="_blank"
-        >
+        <a>
           Terminar Compra
         </a>
       </div>
