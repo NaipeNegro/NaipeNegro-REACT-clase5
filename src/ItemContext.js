@@ -1,5 +1,4 @@
-
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext } from "react";
 
 // 1 - CREAR EL CONTEXTO
 export const ItemsContext = createContext();
@@ -8,23 +7,21 @@ export const ItemsContext = createContext();
 
 // 5 - PASAR PROPS DENTRO DEL COMPONENTE PROVIDER
 export const ItemsProvider = ({ children }) => {
-	const [items, setItems] = useState([
+  const [items, setItems] = useState([]);
 
-	]);
+  const foo = () => {
+    alert(items.length);
+  };
 
-	const foo = () => {
-		alert(items.length);
-	};
+  const clearState = () => {
+    setItems([]);
+  };
 
-	const clearState = () => {
-		setItems([]);
-	};
-
-	// 3 - RETORNAR NUESTRO CONTEXTO CON UN .PROVIDER
-	return (
-		<ItemsContext.Provider value={[items, setItems, foo, clearState]}>
-			{/* 4 - PASAR PROPS.CHILDREN*/}
-			{children}
-		</ItemsContext.Provider>
-	);
+  // 3 - RETORNAR NUESTRO CONTEXTO CON UN .PROVIDER
+  return (
+    <ItemsContext.Provider value={[items, setItems, foo, clearState]}>
+      {/* 4 - PASAR PROPS.CHILDREN*/}
+      {children}
+    </ItemsContext.Provider>
+  );
 };

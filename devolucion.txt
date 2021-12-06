@@ -1,0 +1,5 @@
+No está implementada la funcionalidad del carrito de compra
+Al agregar un producto se agregan al carriito de compras dos productos que no son los que se seleccionaron
+No está desarrollada la vista de detalle
+La app compilo con warnings
+Se puede desarrollar más la UI
