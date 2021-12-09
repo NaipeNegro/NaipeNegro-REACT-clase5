@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = () => {
-  const [items, setItems] = useContext(ItemsContext);
+  const [items] = useContext(ItemsContext);
+
+
 
   return (
     <div className="carrito">
